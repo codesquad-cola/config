@@ -39,6 +39,8 @@
   &-title {
     @include font(18px, $black);
     margin-right: 4px;
+    line-height: 1.2;
+    word-break: break-all;
   }
 
   &-buttons {

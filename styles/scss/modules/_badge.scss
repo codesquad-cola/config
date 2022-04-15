@@ -1,8 +1,9 @@
 %badge-base {
   @include flexbox;
   @include font(14px, $black);
-  width: 26px;
-  height: 26px;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
   font-weight: bold;
   border-radius: 50%;
 }
