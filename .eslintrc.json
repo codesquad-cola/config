@@ -1,0 +1,27 @@
+{
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "globals": { "_": true },
+  "plugins": ["import", "html"],
+  "extends": ["eslint:recommended", "airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "arrowParens": "avoid"
+      }
+    ],
+    "import/no-unresolved": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "class-methods-use-this": "off"
+  }
+}
