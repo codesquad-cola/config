@@ -1,0 +1,14 @@
+%badge-base {
+  @include flexbox;
+  @include font(14px, $black);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.badge-gray4 {
+  @extend %badge-base;
+  background-color: $gray4;
+}

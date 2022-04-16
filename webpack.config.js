@@ -6,6 +6,8 @@ module.exports = {
   devtool: 'eval-cheap-source-map',
   resolve: {
     fallback: { fs: false, path: false },
+    alias: { '~': path.resolve(__dirname, 'src') },
+    extensions: ['.js'],
   },
   entry: {
     main: './src/app.js',

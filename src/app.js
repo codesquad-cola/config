@@ -1,2 +1,3 @@
-import '../scss/main.scss';
+import '../styles/main.scss';
+
 const test = 100;

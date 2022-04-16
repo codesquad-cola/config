@@ -7,7 +7,8 @@
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "sass": "sass -w styles/main.scss:dist/css/style.css"
   },
   "repository": {
     "type": "git",
