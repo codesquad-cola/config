@@ -6,17 +6,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = env => {
   const { NODE_ENV } = env;
   console.log(`[NODE_ENV] >>> ${NODE_ENV}`);
-  if (!['production', 'development'].includes(NODE_ENV)) throw '[NODE_ENV] must be production or development'
+  if (!['production', 'development'].includes(NODE_ENV))
+    throw '[NODE_ENV] must be production or development';
 
   dotenv.config();
 
   const DEV = NODE_ENV === 'development';
   const mode = DEV ? 'development' : 'production';
-  const devtool = DEV ? 'eval-source-map' : 'none';
+  const devtool = DEV ? 'eval-source-map' : false;
   const lastCssLoader = DEV ? 'style-loader' : MiniCssExtractPlugin.loader;
   const miniCssExtractPlugin = DEV
-    ? new MiniCssExtractPlugin({ filename: 'css/style.css' })
-    : '';
+    ? { apply: () => {} }
+    : new MiniCssExtractPlugin({ filename: 'css/style.css' });
 
   return {
     mode,
