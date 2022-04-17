@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --open --progress --env DEV=true",
-    "build": "webpack --progress --env DEV=false",
+    "start": "webpack serve --open --progress --env NODE_ENV=development",
+    "build": "webpack --progress --env NODE_ENV=production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "sass": "sass -w styles/main.scss:dist/css/style.css"

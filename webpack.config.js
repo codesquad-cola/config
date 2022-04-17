@@ -4,11 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
-  const { DEV } = env;
-  dotenv.config();
-  console.log(`[DEV] >>> ${DEV}`);
-  if (!['true', 'false'].includes(DEV)) throw '[DEV] must be true or false';
+  const { NODE_ENV } = env;
+  console.log(`[NODE_ENV] >>> ${NODE_ENV}`);
+  if (!['production', 'development'].includes(NODE_ENV)) throw '[NODE_ENV] must be production or development'
 
+  dotenv.config();
+
+  const DEV = NODE_ENV === 'development';
   const mode = DEV ? 'development' : 'production';
   const devtool = DEV ? 'eval-source-map' : 'none';
   const lastCssLoader = DEV ? 'style-loader' : MiniCssExtractPlugin.loader;
